@@ -46,7 +46,7 @@ export default class Login extends Component {
             data-testid="login-name-input"
             type="text"
             name="name"
-            onChange={ this.handleLogin }
+            onChange={ (e) => this.handleLogin(e) }
           />
           <button
             data-testid="login-submit-button"
