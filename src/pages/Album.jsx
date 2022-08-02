@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import Loading from '../components/Loading';
 import MusicsCard from '../components/MusicCard';
-import { getFavoriteSongs, addSong } from '../services/favoriteSongsAPI';
+import { getFavoriteSongs, addSong, removeSong } from '../services/favoriteSongsAPI';
 
 export default class Album extends Component {
   constructor() {
@@ -30,12 +30,19 @@ export default class Album extends Component {
     });
   }
 
-  handleFavorites = (param) => {
+  handleFavorites = (param, { target }) => {
+    const { checked } = target;
     this.setState({ loadingCard: true }, async () => {
-      await addSong(param);
+      if (checked) {
+        await addSong(param);
+      } else {
+        await removeSong(param);
+      }
       const favSongs = await getFavoriteSongs();
       if (favSongs.length > 0) {
         this.setState({ favSongs });
+      } else {
+        this.setState({ favSongs: [] });
       }
       this.setState({ loadingCard: false });
     });

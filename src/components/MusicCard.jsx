@@ -28,7 +28,7 @@ export default class MusicsList extends Component {
                 data-testid={ `checkbox-music-${e.trackId}` }
                 type="checkbox"
                 checked={ favSongs.some((fav) => fav.trackName === e.trackName) }
-                onChange={ () => onChange({ ...e }) }
+                onChange={ (event) => onChange({ ...e }, event) }
               />
               Favorita
             </label>
