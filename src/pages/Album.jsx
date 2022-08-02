@@ -39,7 +39,9 @@ export default class Album extends Component {
               <h3 data-testid="artist-name">{musics[0].artistName}</h3>
             </div>
           )}
-          {musics.length > 0 && <MusicsCard musics={ musicsArray } />}
+          {musics.length > 0 && <MusicsCard
+            musics={ musicsArray }
+          />}
         </div>
       </>
     );
