@@ -4,34 +4,8 @@ import React, { Component } from 'react';
 import Loading from './Loading';
 
 export default class MusicsList extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     loading: false,
-  //   };
-  // }
-
-  // handleFavorites = (param, { target }) => {
-  //   const { name, checked } = target;
-  //   this.setState({ loading: true,
-  //     [name]: checked }, async () => {
-  //     await addSong(param);
-  //     this.setState({ loading: false, [name]: !checked });
-  //   });
-  // }
-
-  // handleFavorites = (param) => {
-  //   const { updateFavs } = this.props;
-  //   this.setState({ loading: true }, async () => {
-  //     await addSong(param);
-  //     this.setState({ loading: false });
-  //     updateFavs;
-  //   });
-  // }
-
   render() {
     const { musics, favSongs, loading, onChange } = this.props;
-    // const { loading } = this.state;
     if (loading) {
       return <Loading />;
     }
