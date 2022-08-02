@@ -48,18 +48,10 @@ export default class Album extends Component {
     });
   }
 
-  // handleFavorites = () => {
-  //   this.setState(async () => {
-  //     const favSongs = await getFavoriteSongs();
-  //     this.setState({ favSongs });
-  //   });
-  // }
-
   render() {
     const { musics, loading, favSongs, loadingCard } = this.state;
     const musicsArray = [...musics];
     musicsArray.shift();
-    // console.log(checked);
     return (
       <>
         <Header />
