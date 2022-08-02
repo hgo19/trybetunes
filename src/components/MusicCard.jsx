@@ -1,41 +1,37 @@
 import PropTypes, { object } from 'prop-types';
 import React, { Component } from 'react';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+// import { addSong } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
 export default class MusicsList extends Component {
-  constructor() {
-    super();
-    this.state = {
-      loading: false,
-      // favSongs: [],
-    };
-  }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     loading: false,
+  //   };
+  // }
 
-  // handleFavorites = (param) => {
-  //   this.setState({ loading: true }, async () => {
+  // handleFavorites = (param, { target }) => {
+  //   const { name, checked } = target;
+  //   this.setState({ loading: true,
+  //     [name]: checked }, async () => {
   //     await addSong(param);
-  //     const favSongs = await getFavoriteSongs();
-  //     this.setState({ loading: false,
-  //       favSongs });
+  //     this.setState({ loading: false, [name]: !checked });
   //   });
   // }
 
-  handleFavorites = (param, { target }) => {
-    const { name, checked } = target;
-    this.setState({ loading: true,
-      [name]: checked }, async () => {
-      await addSong(param);
-      this.setState({ loading: false });
-    });
-  }
+  // handleFavorites = (param) => {
+  //   const { updateFavs } = this.props;
+  //   this.setState({ loading: true }, async () => {
+  //     await addSong(param);
+  //     this.setState({ loading: false });
+  //     updateFavs;
+  //   });
+  // }
 
   render() {
-    const { musics } = this.props;
-    const { loading } = this.state;
-    // const checked = musics.some((e) => favSongs
-    //   .some((fav) => e.trackName === fav.trackName));
-    // console.log(checked);
+    const { musics, favSongs, loading, onChange } = this.props;
+    // const { loading } = this.state;
     if (loading) {
       return <Loading />;
     }
@@ -52,14 +48,13 @@ export default class MusicsList extends Component {
               <code>audio</code>
               .
             </audio>
-            <label htmlFor="fav">
+            <label htmlFor={ `id-${e.trackName}` }>
               <input
-                id="fav"
+                id={ `id-${e.trackName}` }
                 data-testid={ `checkbox-music-${e.trackId}` }
                 type="checkbox"
-                name={ e.trackName }
-                checked={ !e.trackName ? false : e.trackName }
-                onChange={ (event) => this.handleFavorites({ ...e }, event) }
+                checked={ favSongs.some((fav) => fav.trackName === e.trackName) }
+                onChange={ () => onChange({ ...e }) }
               />
               Favorita
             </label>
@@ -71,4 +66,7 @@ export default class MusicsList extends Component {
 
 MusicsList.propTypes = {
   musics: PropTypes.arrayOf(object.isRequired).isRequired,
+  favSongs: PropTypes.arrayOf(object.isRequired).isRequired,
+  loading: PropTypes.bool.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
