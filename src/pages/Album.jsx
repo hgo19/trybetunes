@@ -55,7 +55,7 @@ export default class Album extends Component {
     return (
       <>
         <Header />
-        <div data-testid="page-album">
+        <div data-testid="page-album" className="musics-container">
           {loading && <Loading />}
           {musics.length > 0 && (
             <div>

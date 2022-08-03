@@ -10,6 +10,7 @@ export default class Login extends Component {
     this.state = {
       disableLogin: true,
       userName: '',
+      image: 'https://cdn-icons-png.flaticon.com/512/64/64572.png',
       loading: false,
     };
   }
@@ -29,9 +30,9 @@ export default class Login extends Component {
 
   handleClick = () => {
     this.setState({ loading: true }, async () => {
-      const { userName } = this.state;
+      const { userName, image } = this.state;
       const { history } = this.props;
-      await createUser({ name: userName });
+      await createUser({ name: userName, image });
       history.push('/search');
     });
   }
@@ -40,8 +41,13 @@ export default class Login extends Component {
     const { disableLogin, loading } = this.state;
     if (loading) return <Loading />;
     return (
-      <div data-testid="page-login">
-        <form>
+      <div data-testid="page-login" className="login-container">
+        <h1>
+          <span>Trybe</span>
+          {' '}
+          Tunes
+        </h1>
+        <form className="login-form">
           <input
             data-testid="login-name-input"
             type="text"

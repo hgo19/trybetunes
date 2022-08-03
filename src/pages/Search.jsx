@@ -45,7 +45,7 @@ export default class Search extends Component {
       <div data-testid="page-search">
         <Header />
         <h2>Search</h2>
-        <form>
+        <form className="albums-search">
           <input
             data-testid="search-artist-input"
             type="text"
@@ -63,8 +63,10 @@ export default class Search extends Component {
 
           </button>
         </form>
-        {loading && <Loading />}
-        {isSearching && <AlbumsCard albums={ albums } serachValue={ oldSearch } />}
+        <div className="albums-container">
+          {loading && <Loading />}
+          {isSearching && <AlbumsCard albums={ albums } serachValue={ oldSearch } />}
+        </div>
       </div>
     );
   }

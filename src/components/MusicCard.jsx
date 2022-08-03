@@ -1,6 +1,5 @@
 import PropTypes, { object } from 'prop-types';
 import React, { Component } from 'react';
-// import { addSong } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
 export default class MusicsList extends Component {
@@ -13,8 +12,8 @@ export default class MusicsList extends Component {
       <div>
         <h1>MusicsList</h1>
         {musics.map((e, index) => (
-          <div key={ index }>
-            {e.trackName}
+          <div key={ index } className="music">
+            <p>{e.trackName}</p>
             <audio data-testid="audio-component" src={ e.previewUrl } controls>
               <track kind="captions" />
               O seu navegador não suporta o elemento

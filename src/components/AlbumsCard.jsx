@@ -10,21 +10,14 @@ export default class AlbumsCard extends Component {
         <div>
           <h4>{`Resultado de álbuns de: ${serachValue}`}</h4>
           {albums.map((e, index) => (
-            <div key={ index }>
-              <img src={ e.artworkUrl100 } alt={ e.collectionName } />
-              <p>{e.artistName}</p>
-              <p>{e.collectionName}</p>
-              <p>{e.releaseDate}</p>
-              <Link to={ `/album/${e.collectionId}` }>
-                <button
-                  data-testid={ `link-to-album-${e.collectionId}` }
-                  type="button"
-                >
-                  Ver Album
-
-                </button>
-              </Link>
-            </div>))}
+            <Link key={ index } to={ `/album/${e.collectionId}` }>
+              <div className="album">
+                <img src={ e.artworkUrl100 } alt={ e.collectionName } />
+                <p>{`Album: ${e.collectionName}`}</p>
+                <p>{`Artista: ${e.artistName}`}</p>
+              </div>
+            </Link>
+          ))}
         </div>
       );
     }

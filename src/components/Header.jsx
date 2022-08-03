@@ -17,19 +17,25 @@ export default class Header extends Component {
     this.setState({ loading: true }, async () => {
       const userObj = await getUser();
       this.setState({ userName: userObj.name,
+        image: userObj.image,
         loading: false });
     });
   }
 
   render() {
-    const { userName, loading } = this.state;
+    const { userName, loading, image } = this.state;
     return (
-      <header data-testid="header-component">
-        <h1>Header</h1>
-        <nav>
+      <header data-testid="header-component" className="header-container">
+        <sidebar className="sidebar-container">
+          <h1>
+            <span>Trybe</span>
+            Tunes
+          </h1>
           <ul>
             <Link to="/search">
-              <li data-testid="link-to-search">Search</li>
+              <li data-testid="link-to-search">
+                Search
+              </li>
             </Link>
             <Link to="/favorites">
               <li data-testid="link-to-favorites">Musicas Favoritas</li>
@@ -38,8 +44,15 @@ export default class Header extends Component {
               <li data-testid="link-to-profile">Perfil</li>
             </Link>
           </ul>
-        </nav>
-        {loading ? <Loading /> : <span data-testid="header-user-name">{userName}</span>}
+        </sidebar>
+        <div className="user">
+          <Link to="/profile">
+            <img src={ image } alt={ userName } />
+            {loading ? <Loading /> : (
+              <span data-testid="header-user-name">{userName}</span>
+            )}
+          </Link>
+        </div>
       </header>
     );
   }
