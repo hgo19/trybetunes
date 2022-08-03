@@ -52,14 +52,15 @@ export default class Favorites extends Component {
     return (
       <div data-testid="page-favorites">
         <Header />
-        Favorites
-        <MusicsCard
-          musics={ favSongs }
-          favSongs={ favSongs }
-          loading={ loadingCard }
-          onChange={ this.handleFavorites }
-        />
-
+        <div className="musics-container">
+          <h1>Musicas Favoritas:</h1>
+          <MusicsCard
+            musics={ favSongs }
+            favSongs={ favSongs }
+            loading={ loadingCard }
+            onChange={ this.handleFavorites }
+          />
+        </div>
       </div>
     );
   }

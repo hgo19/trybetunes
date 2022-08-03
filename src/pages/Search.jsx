@@ -65,7 +65,12 @@ export default class Search extends Component {
         </form>
         <div className="albums-container">
           {loading && <Loading />}
-          {isSearching && <AlbumsCard albums={ albums } serachValue={ oldSearch } />}
+          {isSearching && (
+            <>
+              <h4>{`Resultado de álbuns de: ${oldSearch}`}</h4>
+              <AlbumsCard albums={ albums } />
+            </>
+          )}
         </div>
       </div>
     );

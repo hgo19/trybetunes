@@ -20,9 +20,9 @@ export default class ProfileEdit extends Component {
   async componentDidMount() {
     const userObj = await getUser();
     this.setState({ loading: false,
-      name: userObj.name,
+      name: '',
       email: userObj.email,
-      image: userObj.image,
+      image: '',
       description: userObj.description }, () => this.validateButton());
   }
 
@@ -75,61 +75,73 @@ export default class ProfileEdit extends Component {
       <div data-testid="page-profile-edit">
         <Header />
         ProfileEdit
-        <form>
-          <label htmlFor="input-name">
-            Nome:
-            <input
-              id="input-name"
-              data-testid="edit-input-name"
-              name="name"
-              value={ name }
-              type="text"
-              onChange={ this.handleChange }
-            />
-          </label>
-          <label htmlFor="input-email">
-            Email:
-            <input
-              id="input-email"
-              data-testid="edit-input-email"
-              name="email"
-              value={ email }
-              type="email"
-              onChange={ this.handleChange }
-            />
-          </label>
-          <label htmlFor="input-description">
-            Description:
-            <input
-              id="input-description"
-              data-testid="edit-input-description"
-              name="description"
-              value={ description }
-              type="text"
-              onChange={ this.handleChange }
-            />
-          </label>
-          <label htmlFor="input-image">
-            Imagem:
-            <input
-              id="input-image"
-              data-testid="edit-input-image"
-              name="image"
-              value={ image }
-              type="text"
-              onChange={ this.handleChange }
-            />
-          </label>
-          <button
-            data-testid="edit-button-save"
-            type="button"
-            disabled={ isDisabled }
-            onClick={ this.handleClick }
-          >
-            Enviar
+        <div className="profile-edit">
+          <div className="img-box">
+            <img className="img-profile" src={ image } alt={ name } />
+          </div>
+          <form>
+            <label htmlFor="input-name">
+              <span>
+                Nome:
+              </span>
+              <input
+                id="input-name"
+                data-testid="edit-input-name"
+                name="name"
+                value={ name }
+                type="text"
+                onChange={ this.handleChange }
+              />
+            </label>
+            <label htmlFor="input-email">
+              <span>
+                Email:
+              </span>
+              <input
+                id="input-email"
+                data-testid="edit-input-email"
+                name="email"
+                value={ email }
+                type="email"
+                onChange={ this.handleChange }
+              />
+            </label>
+            <label htmlFor="input-description">
+              <span>
+                Description:
+              </span>
+              <textarea
+                id="input-description"
+                data-testid="edit-input-description"
+                name="description"
+                value={ description }
+                type="text"
+                onChange={ this.handleChange }
+              />
+            </label>
+            <label htmlFor="input-image">
+              <span>Imagem:</span>
+              <input
+                id="input-image"
+                data-testid="edit-input-image"
+                name="image"
+                value={ image }
+                type="text"
+                onChange={ this.handleChange }
+              />
+            </label>
+            <button
+              className="save-edit"
+              data-testid="edit-button-save"
+              type="button"
+              disabled={ isDisabled }
+              onClick={ this.handleClick }
+            >
+              Enviar
 
-          </button>
-        </form>
+            </button>
+          </form>
+        </div>
 
       </div>
     );

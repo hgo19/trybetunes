@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300&display=swap');
+
 body {
   margin: 0;
   padding: 0;
@@ -9,6 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(12, 12, 12);
   color: black;
+  font-family: 'Roboto', sans-serif;
 }
 
 code {
@@ -22,7 +25,19 @@ button {
 
 a {
   text-decoration: none;
-  color: white;
+  color: rgb(148, 148, 148);
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+}
+
+p {
+  word-break: break-all;
+}
+
+span {
+  color: rgb(148, 148, 148);
 }
 
 .loading {
@@ -31,7 +46,8 @@ a {
 
 .login-container {
   align-items: center;
-  background-color: black;
+  background-color: rgb(5, 5, 5);
+  box-shadow: 10px 10px 5px black;
   color: white;
   display: flex;
   flex-direction: column;
@@ -86,36 +102,14 @@ a {
   justify-content: space-between;
 }
 
-.user {
-  background-color: black;
-  color: white;
-  font-size: 20px;
-  margin-top: 1%;
-  margin-left: 90%;
-  position: fixed;
-  width: 150px;
-}
-
-.user a {
-  align-items: center;
-  display: flex;
-  gap: 20px;
-}
-
-.user img {
-  background-color: white;
-  border-radius: 50%;
-  border: 1px solid black;
-  width: 50px;
-}
-
 h1 span {
   color: rgb(0, 134, 52);
 }
 
 .sidebar-container {
   align-items: center;
-  background-color: black;
+  background-color: rgb(5, 5, 5);
+  box-shadow: 5px 5px 5px black;
   color: white;
   display: flex;
   flex-direction: column;
@@ -129,17 +123,48 @@ h1 span {
   color: rgb(0, 134, 52);
 }
 
+.sidebar-container hr {
+  border-color: rgb(37, 37, 37);
+  width: 90%;
+}
+
 .sidebar-container ul {
   list-style: none;
 }
 
 .sidebar-container li {
   text-decoration: none;
-  color: rgb(189, 189, 189);
-  font-size: 20px;
+  color: rgb(148, 148, 148);
+  font-size: 25px;
 }
 
 .sidebar-container li:hover {
+  color: white;
+}
+
+.sidebar-container a:hover {
+  color: white;
+}
+
+.user {
+  color: white;
+  font-size: 20px;
+}
+
+.user img {
+  height: 40px;
+  object-fit: cover;
+  width: 40px;
+  z-index: 1;
+}
+
+.user a {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+
+.user span {
   color: rgb(148, 148, 148);
 }
 
@@ -182,11 +207,19 @@ h1 span {
 }
 
 .albums-container {
-  display: flex;
-  flex-direction: column;
-  width: 600px;
-  margin-left: 45%;
+  margin-left: 20%;
   padding: 10px;
+  width: 1620px;
+}
+
+.albums-container span {
+  font-size: 30px;
+}
+
+.albums-container div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .albums-container h4 {
@@ -195,11 +228,21 @@ h1 span {
 
 .album {
   display: flex;
-  background-color: black;
+  background-color: rgb(5, 5, 5);
+  box-shadow:  12px 12px 10px black,
+  -12px -12px 10px black;
   color: white;
-  justify-content: space-between;
+  flex-direction: column;
+  height: 200px;
   padding: 10px;
   margin-bottom: 5px;
+  overflow: hidden;
+	overflow-wrap: break-word;
+  width: 500px;
+}
+
+.album img {
+  width: 150px;
 }
 
 .album p {
@@ -211,13 +254,168 @@ h1 span {
   opacity: 0.7;
 }
 
+.album-title {
+  display: flex;
+  background-color: rgb(5, 5, 5);
+  box-shadow: 10px 10px 5px black;
+  color: white;
+  gap: 30px;
+  height: 200px;
+  padding: 10px;
+  margin-bottom: 5px;
+  overflow: hidden;
+	overflow-wrap: break-word;
+  width: 790px;
+}
+
+.album-title img {
+  width: 200px;
+}
+
 .musics-container {
-  background-color: black;
   color: white;
   margin: auto;
-  width: 800px;
+  max-width: 800px;
 }
 
 .music {
+  background-color: rgb(5, 5, 5);
+  box-shadow:  12px 12px 10px black;
+  margin-bottom: 10px;
+  padding: 20px;
+}
 
+.music div{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.music audio {
+  width: 600px;
+}
+
+.music input, label {
+  cursor: pointer;
+}
+
+.profile {
+  background-color: rgb(5, 5, 5);
+  box-shadow:  12px 12px 10px black;
+  color: white;
+  display: flex;
+  gap: 40px;
+  margin-left: 40%;
+  margin-top: 10%;
+  padding: 20px;
+  width: 800px;
+}
+
+.profile img {
+  height: 500px;
+  object-fit: cover;
+  width: 500px;
+  z-index: 1;
+}
+
+.profile div button {
+  background-color: rgb(0, 134, 52);
+  border-radius: 30px;
+  border: none;
+  color:  white;
+  cursor: pointer;
+  font-weight: 700;
+  height: 30px;
+  margin-left: 170px;
+  margin-top: 400px;
+  padding: 0 20px;
+  width: 100px;
+}
+
+.profile div button:hover {
+  opacity: 0.8;
+}
+
+.profile-span {
+  font-weight: 700;
+  color: white;
+  margin-right: 10px;
+}
+
+.profile-edit {
+  background-color: rgb(5, 5, 5);
+  box-shadow:  12px 12px 10px black;
+  color: white;
+  display: flex;
+  gap: 40px;
+  margin-left: 40%;
+  margin-top: 10%;
+  padding: 20px;
+  width: 800px;
+}
+
+.img-box {
+  background-color: white;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.img-profile {
+  height: 200px;
+  object-fit: cover;
+  width: 200px;
+  z-index: 1;
+}
+
+.profile-edit form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profile-edit form label {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  vertical-align: center;
+}
+
+label span {
+  color: white; 
+  font-weight: 700;
+}
+
+.profile-edit form label input{
+  height: 20px;
+  width: 250px;
+}
+
+#input-description {
+  height: 100px;
+  resize: none;
+}
+
+textarea {
+  width: 520px;
+}
+
+.save-edit {
+  background-color: rgb(0, 134, 52);
+  border-radius: 30px;
+  border: none;
+  color:  white;
+  cursor: pointer;
+  font-weight: 700;
+  height: 30px;
+  margin-left: 160px;
+  margin-top: 25px;
+  padding: 0 20px;
+  width: 100px;
+}
+
+.save-edit:hover {
+  opacity: 0.8;
+}
+
+.save-edit:disabled {
+  opacity: 0.5;
 }

@@ -10,7 +10,7 @@ export default class Login extends Component {
     this.state = {
       disableLogin: true,
       userName: '',
-      image: 'https://cdn-icons-png.flaticon.com/512/64/64572.png',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOWVmNQHzLGv64c_-D343Ea8ZGURbdgJcvhg&usqp=CAU',
       loading: false,
     };
   }
@@ -47,6 +47,9 @@ export default class Login extends Component {
           {' '}
           Tunes
         </h1>
+        <h4>
+          Welcome, enter your name and enjoy
+        </h4>
         <form className="login-form">
           <input
             data-testid="login-name-input"

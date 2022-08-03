@@ -4,11 +4,10 @@ import { Link } from 'react-router-dom';
 
 export default class AlbumsCard extends Component {
   render() {
-    const { albums, serachValue } = this.props;
+    const { albums } = this.props;
     if (albums.length > 0) {
       return (
         <div>
-          <h4>{`Resultado de álbuns de: ${serachValue}`}</h4>
           {albums.map((e, index) => (
             <Link key={ index } to={ `/album/${e.collectionId}` }>
               <div className="album">
@@ -23,7 +22,6 @@ export default class AlbumsCard extends Component {
     }
     return (
       <div>
-        <h4>{`Resultado de álbuns de: ${serachValue}`}</h4>
         <p>Nenhum álbum foi encontrado</p>
       </div>
     );
@@ -32,5 +30,4 @@ export default class AlbumsCard extends Component {
 
 AlbumsCard.propTypes = {
   albums: PropTypes.arrayOf(object.isRequired).isRequired,
-  serachValue: PropTypes.string.isRequired,
 };

@@ -1,6 +1,9 @@
 // import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { FaSearch, FaUser } from 'react-icons/fa';
+import { AiFillStar } from 'react-icons/ai';
+import { BsHouseDoorFill } from 'react-icons/bs';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
 
@@ -31,28 +34,49 @@ export default class Header extends Component {
             <span>Trybe</span>
             Tunes
           </h1>
+          <hr />
           <ul>
-            <Link to="/search">
-              <li data-testid="link-to-search">
+            <li>
+              <BsHouseDoorFill />
+              <Link to="/">
+                Home
+              </Link>
+            </li>
+            <li data-testid="link-to-search">
+              <FaSearch />
+              <Link to="/search">
                 Search
-              </li>
-            </Link>
-            <Link to="/favorites">
-              <li data-testid="link-to-favorites">Musicas Favoritas</li>
-            </Link>
-            <Link to="/profile">
-              <li data-testid="link-to-profile">Perfil</li>
-            </Link>
+              </Link>
+            </li>
+            <li data-testid="link-to-favorites">
+              <AiFillStar />
+              <Link to="/favorites">
+                Musicas Favoritas
+              </Link>
+            </li>
+            <li data-testid="link-to-profile">
+              <FaUser />
+              <Link to="/profile">
+                Perfil
+              </Link>
+            </li>
+            <li>
+              <BsHouseDoorFill />
+              <Link to="/profile/edit">
+                Editar Perfil
+              </Link>
+            </li>
           </ul>
+          <hr />
+          <div className="user">
+            <Link to="/profile">
+              <img src={ image } alt={ userName } />
+              {loading ? <Loading /> : (
+                <span data-testid="header-user-name">{userName}</span>
+              )}
+            </Link>
+          </div>
         </sidebar>
-        <div className="user">
-          <Link to="/profile">
-            <img src={ image } alt={ userName } />
-            {loading ? <Loading /> : (
-              <span data-testid="header-user-name">{userName}</span>
-            )}
-          </Link>
-        </div>
       </header>
     );
   }

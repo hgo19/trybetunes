@@ -58,18 +58,26 @@ export default class Album extends Component {
         <div data-testid="page-album" className="musics-container">
           {loading && <Loading />}
           {musics.length > 0 && (
-            <div>
+            <div className="album-title">
               <img src={ musics[0].artworkUrl100 } alt={ musics[0].collectionName } />
-              <h1 data-testid="album-name">{musics[0].collectionName}</h1>
-              <h3 data-testid="artist-name">{musics[0].artistName}</h3>
+              <div>
+                <h1 data-testid="album-name">{musics[0].collectionName}</h1>
+                <h3 data-testid="artist-name">{musics[0].artistName}</h3>
+              </div>
             </div>
           )}
-          {musics.length > 0 && <MusicsCard
-            musics={ musicsArray }
-            favSongs={ favSongs }
-            loading={ loadingCard }
-            onChange={ this.handleFavorites }
-          />}
+          {musics.length > 0
+          && (
+            <>
+              <h1>Lista de Musicas:</h1>
+              <MusicsCard
+                musics={ musicsArray }
+                favSongs={ favSongs }
+                loading={ loadingCard }
+                onChange={ this.handleFavorites }
+              />
+            </>
+          )}
         </div>
       </>
     );
