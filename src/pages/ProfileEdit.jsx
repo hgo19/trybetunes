@@ -55,7 +55,7 @@ export default class ProfileEdit extends Component {
       };
       await updateUser(userObj);
       const { history } = this.props;
-      history.push('/profile');
+      history.push('/trybetunes/profile');
     });
   }
 

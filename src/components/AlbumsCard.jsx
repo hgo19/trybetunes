@@ -9,7 +9,7 @@ export default class AlbumsCard extends Component {
       return (
         <div className="albums-container">
           {albums.map((e, index) => (
-            <Link key={ index } to={ `/album/${e.collectionId}` }>
+            <Link key={ index } to={ `/trybetunes/album/${e.collectionId}` }>
               <div className="album-card">
                 <div className="album-img-and-title">
                   <img src={ e.artworkUrl100 } alt={ e.collectionName } />

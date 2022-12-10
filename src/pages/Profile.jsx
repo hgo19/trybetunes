@@ -58,7 +58,7 @@ export default class Profile extends Component {
               {' '}
               {description}
             </p>
-            <Link to="/profile/edit">
+            <Link to="/trybetunes/profile/edit">
               Editar perfil
             </Link>
           </div>

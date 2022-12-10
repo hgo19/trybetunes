@@ -33,7 +33,7 @@ export default class Login extends Component {
       const { userName, image } = this.state;
       const { history } = this.props;
       await createUser({ name: userName, image });
-      history.push('/search');
+      history.push('/trybetunes/search');
     });
   }
 

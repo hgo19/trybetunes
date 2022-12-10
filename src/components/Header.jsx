@@ -38,38 +38,38 @@ export default class Header extends Component {
           <ul>
             <li>
               <BsHouseDoorFill />
-              <Link to="/">
+              <Link to="/trybetunes/">
                 Home
               </Link>
             </li>
             <li data-testid="link-to-search">
               <FaSearch />
-              <Link to="/search">
+              <Link to="/trybetunes/search">
                 Search
               </Link>
             </li>
             <li data-testid="link-to-favorites">
               <AiFillStar />
-              <Link to="/favorites">
+              <Link to="/trybetunes/favorites">
                 Musicas Favoritas
               </Link>
             </li>
             <li data-testid="link-to-profile">
               <FaUser />
-              <Link to="/profile">
+              <Link to="/trybetunes/profile">
                 Perfil
               </Link>
             </li>
             <li>
               <AiFillProfile />
-              <Link to="/profile/edit">
+              <Link to="/trybetunes/profile/edit">
                 Editar Perfil
               </Link>
             </li>
           </ul>
           <hr />
           <div className="user">
-            <Link to="/profile">
+            <Link to="/trybetunes/profile">
               <img src={ image } alt={ userName } />
               {loading ? <Loading /> : (
                 <span data-testid="header-user-name">{userName}</span>
