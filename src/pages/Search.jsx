@@ -27,7 +27,8 @@ export default class Search extends Component {
     this.setState({ [name]: value });
   }
 
-  handleClick = () => {
+  handleSubmit = (event) => {
+    event.preventDefault();
     const { search } = this.state;
     this.setState({ loading: true,
       isSearching: true,
@@ -44,34 +45,35 @@ export default class Search extends Component {
     return (
       <div data-testid="page-search">
         <Header />
-        <h2>Search</h2>
-        <form className="albums-search">
-          <input
-            data-testid="search-artist-input"
-            type="text"
-            name="search"
-            value={ search }
-            onChange={ this.handleChange }
-          />
-          <button
-            data-testid="search-artist-button"
-            type="button"
-            disabled={ isDisabled }
-            onClick={ this.handleClick }
-          >
-            Procurar
+        <main className="search-container">
+          <h2>Pesquise sua Música:</h2>
+          <form className="albums-search" onSubmit={ this.handleSubmit }>
+            <input
+              data-testid="search-artist-input"
+              type="text"
+              name="search"
+              value={ search }
+              onChange={ this.handleChange }
+            />
+            <button
+              data-testid="search-artist-button"
+              type="button"
+              disabled={ isDisabled }
+            >
+              Procurar
 
-          </button>
-        </form>
-        <div className="albums-container">
-          {isSearching && (
-            <>
-              <h4>{`Resultado de álbuns de: ${oldSearch}`}</h4>
-              <AlbumsCard albums={ albums } />
-            </>
-          )}
-          {loading && <div className="login-loading "><Loading /></div>}
-        </div>
+            </button>
+          </form>
+          <div className="albums-container">
+            {isSearching && (
+              <>
+                <h4>{`Resultado de álbuns de: ${oldSearch}`}</h4>
+                <AlbumsCard albums={ albums } />
+              </>
+            )}
+            {loading && <div className="login-loading "><Loading /></div>}
+          </div>
+        </main>
       </div>
     );
   }
