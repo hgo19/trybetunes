@@ -64,7 +64,7 @@ export default class Search extends Component {
 
             </button>
           </form>
-          <div className="albums-container">
+          <div className="search-result-container">
             {isSearching && (
               <>
                 <h4>{`Resultado de álbuns de: ${oldSearch}`}</h4>

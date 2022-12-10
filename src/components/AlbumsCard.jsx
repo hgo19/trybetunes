@@ -7,13 +7,17 @@ export default class AlbumsCard extends Component {
     const { albums } = this.props;
     if (albums.length > 0) {
       return (
-        <div>
+        <div className="albums-container">
           {albums.map((e, index) => (
             <Link key={ index } to={ `/album/${e.collectionId}` }>
-              <div className="album">
-                <img src={ e.artworkUrl100 } alt={ e.collectionName } />
-                <p>{`Album: ${e.collectionName}`}</p>
-                <p>{`Artista: ${e.artistName}`}</p>
+              <div className="album-card">
+                <div className="album-img-and-title">
+                  <img src={ e.artworkUrl100 } alt={ e.collectionName } />
+                  <p>{`Album: ${e.collectionName}`}</p>
+                </div>
+                <div className="artist-album-name">
+                  {`Artista: ${e.artistName}`}
+                </div>
               </div>
             </Link>
           ))}

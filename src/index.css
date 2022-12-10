@@ -230,49 +230,57 @@ h1 span {
   opacity: 0.9;
 }
 
-.albums-container {
+.search-result-container {
   padding: 10px;
 }
 
-.albums-container span {
+.search-result-container span {
   font-size: 30px;
 }
 
-.albums-container div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-.albums-container h4 {
+.search-result-container h4 {
   color: white;
 }
 
-.album {
+.albums-container {
   display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-left: 300px;
+}
+
+.album-card {
   background-color: rgb(15, 15, 15);
   box-shadow:  12px 12px 10px black;
   color: white;
+  display: flex;
   flex-direction: column;
-  height: 200px;
+  height: 330px;
   justify-content: space-evenly;
-  padding: 10px;
   margin-bottom: 5px;
-  overflow: hidden;
-	overflow-wrap: break-word;
-  width: 500px;
+  padding: 10px;
+  width: 200px;
 }
 
-.album img {
-  width: 150px;
+.album-img-and-title {
+  font-size: 0.7rem;
 }
 
-.album p {
-  padding: 0 10px;
+.album-img-and-title img {
+  width: 200px;
+}
+
+.artist-album-name {
+  align-content: center;
+  align-items: center;
+  display: flex;
   font-weight: 700;
+  justify-content: start;
+  padding: 3px;
 }
 
-.album:hover {
+.album-card:hover {
   opacity: 0.7;
 }
 
