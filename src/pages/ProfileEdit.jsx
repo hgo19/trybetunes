@@ -33,7 +33,7 @@ export default class ProfileEdit extends Component {
     const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     const checkEmail = email.match(pattern);
     const finalCheck = boolLength && checkEmail;
-    this.setState({ isDisabled: finalCheck });
+    this.setState({ isDisabled: !finalCheck });
   }
 
   handleChange = ({ target }) => {
@@ -79,7 +79,7 @@ export default class ProfileEdit extends Component {
           <div className="img-box">
             <img className="img-profile" src={ image } alt={ name } />
           </div>
-          <form>
+          <form onSubmit={ this.handleClick }>
             <label htmlFor="input-name">
               <span>
                 Nome:
@@ -133,9 +133,8 @@ export default class ProfileEdit extends Component {
             <button
               className="save-edit"
               data-testid="edit-button-save"
-              type="button"
+              type="submit"
               disabled={ isDisabled }
-              onClick={ this.handleClick }
             >
               Enviar
 
