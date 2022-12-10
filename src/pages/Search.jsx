@@ -46,7 +46,6 @@ export default class Search extends Component {
       <div data-testid="page-search">
         <Header />
         <main className="search-container">
-          <h2>Pesquise sua Música:</h2>
           <form className="albums-search" onSubmit={ this.handleSubmit }>
             <input
               data-testid="search-artist-input"

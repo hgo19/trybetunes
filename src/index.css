@@ -197,6 +197,7 @@ h1 span {
   display: flex;
   color: white;
   gap: 1%;
+  padding-top: 30px;
 }
 
 .albums-search input {
