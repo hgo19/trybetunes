@@ -45,7 +45,7 @@ export default class Favorites extends Component {
         <div data-testid="page-favorites">
           <Header />
           Favorites
-          <Loading />
+          <div className="login-loading "><Loading /></div>
         </div>
       );
     }

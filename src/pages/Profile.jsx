@@ -28,7 +28,7 @@ export default class Profile extends Component {
       return (
         <div data-testid="page-profile">
           <Header />
-          <Loading />
+          <div className="login-loading "><Loading /></div>
         </div>
       );
     }

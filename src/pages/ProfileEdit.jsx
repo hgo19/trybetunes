@@ -33,7 +33,7 @@ export default class ProfileEdit extends Component {
     const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     const checkEmail = email.match(pattern);
     const finalCheck = boolLength && checkEmail;
-    this.setState({ isDisabled: !finalCheck });
+    this.setState({ isDisabled: finalCheck });
   }
 
   handleChange = ({ target }) => {
@@ -66,7 +66,7 @@ export default class ProfileEdit extends Component {
         <div data-testid="page-profile-edit">
           <Header />
           ProfileEdit
-          <Loading />
+          <div className="login-loading "><Loading /></div>
 
         </div>
       );

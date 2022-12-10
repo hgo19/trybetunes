@@ -40,10 +40,6 @@ span {
   color: rgb(148, 148, 148);
 }
 
-.loading {
-  font-size: 300px  ;
-}
-
 .login-container {
   align-items: center;
   background-color: rgb(5, 5, 5);
@@ -55,6 +51,9 @@ span {
   justify-content: center;
   margin: 20% auto;
   width: 500px;
+}
+.login-container h1 {
+  font-size: 50px;
 }
 
 .login-container span{
@@ -95,6 +94,16 @@ span {
 
 .login-form button:hover {
  opacity: 0.8;
+}
+
+.login-loading {
+  margin: 20% auto;
+}
+
+.login-loading span {
+  font-size: 30px;
+  color: white;
+  margin-left: 50%;
 }
 
 .header-container {
@@ -229,11 +238,11 @@ h1 span {
 .album {
   display: flex;
   background-color: rgb(5, 5, 5);
-  box-shadow:  12px 12px 10px black,
-  -12px -12px 10px black;
+  box-shadow:  12px 12px 10px black;
   color: white;
   flex-direction: column;
   height: 200px;
+  justify-content: space-evenly;
   padding: 10px;
   margin-bottom: 5px;
   overflow: hidden;
@@ -327,7 +336,7 @@ h1 span {
   font-weight: 700;
   height: 30px;
   margin-left: 170px;
-  margin-top: 400px;
+  margin-top: 290px;
   padding: 0 20px;
   width: 100px;
 }

@@ -39,7 +39,13 @@ export default class Login extends Component {
 
   render() {
     const { disableLogin, loading } = this.state;
-    if (loading) return <Loading />;
+    if (loading) {
+      return (
+        <div className="login-loading">
+          <Loading />
+        </div>
+      );
+    }
     return (
       <div data-testid="page-login" className="login-container">
         <h1>

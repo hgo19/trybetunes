@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FaSearch, FaUser } from 'react-icons/fa';
-import { AiFillStar } from 'react-icons/ai';
+import { AiFillStar, AiFillProfile } from 'react-icons/ai';
 import { BsHouseDoorFill } from 'react-icons/bs';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
@@ -61,7 +61,7 @@ export default class Header extends Component {
               </Link>
             </li>
             <li>
-              <BsHouseDoorFill />
+              <AiFillProfile />
               <Link to="/profile/edit">
                 Editar Perfil
               </Link>

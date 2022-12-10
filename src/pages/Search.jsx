@@ -64,13 +64,13 @@ export default class Search extends Component {
           </button>
         </form>
         <div className="albums-container">
-          {loading && <Loading />}
           {isSearching && (
             <>
               <h4>{`Resultado de álbuns de: ${oldSearch}`}</h4>
               <AlbumsCard albums={ albums } />
             </>
           )}
+          {loading && <div className="login-loading "><Loading /></div>}
         </div>
       </div>
     );

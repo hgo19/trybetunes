@@ -56,7 +56,7 @@ export default class Album extends Component {
       <>
         <Header />
         <div data-testid="page-album" className="musics-container">
-          {loading && <Loading />}
+          {loading && <div className="login-loading "><Loading /></div>}
           {musics.length > 0 && (
             <div className="album-title">
               <img src={ musics[0].artworkUrl100 } alt={ musics[0].collectionName } />
