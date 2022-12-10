@@ -284,29 +284,29 @@ h1 span {
   opacity: 0.7;
 }
 
-.album-title {
-  display: flex;
-  background-color: rgb(15, 15, 15);
-  box-shadow: 10px 10px 5px black;
-  color: white;
-  gap: 30px;
-  height: 200px;
-  padding: 10px;
-  margin-bottom: 5px;
-  overflow: hidden;
-	overflow-wrap: break-word;
-  width: 790px;
-}
-
-.album-title img {
-  width: 200px;
-}
-
 .musics-container {
   color: white;
   margin: auto;
   max-width: 800px;
 }
+
+.album-title-container {
+  display: flex;
+  background-color: rgb(15, 15, 15);
+  box-shadow: 10px 10px 5px black;
+  margin-bottom: 5px;
+  width: 800px;
+}
+
+.album-title-container img {
+  padding: 20px;
+  width: 200px;
+}
+
+.album-title-container h1, h3 {
+  padding-left: 10px;
+}
+
 
 .music {
   background-color: rgb(15, 15, 15);
