@@ -36,35 +36,30 @@ export default class Profile extends Component {
       <div data-testid="page-profile">
         <Header />
         Profile
-        <div className="profile">
-          <img
-            data-testid="profile-image"
-            src={ image }
-            alt={ name }
-          />
-          <div>
+        <div className="profile-container">
+          <div className="profile-box">
+            <img
+              data-testid="profile-image"
+              src={ image }
+              alt={ name }
+            />
             <p>
-              <span className="profile-span">Nome:</span>
+              <strong>Nome:</strong>
               {' '}
               {name}
             </p>
             <p>
-              <span className="profile-span">Email:</span>
+              <strong>Email:</strong>
               {' '}
               {email}
             </p>
             <p>
-              <span className="profile-span">Descrição:</span>
+              <strong>Descrição:</strong>
               {' '}
               {description}
             </p>
             <Link to="/profile/edit">
-              <button
-                type="button"
-              >
-                Editar perfil
-
-              </button>
+              Editar perfil
             </Link>
           </div>
         </div>

@@ -329,47 +329,40 @@ h1 span {
   cursor: pointer;
 }
 
-.profile {
+.profile-container {
+  display: grid;
+  place-items: center;
+}
+
+.profile-box {
   background-color: rgb(15, 15, 15);
   box-shadow:  12px 12px 10px black;
   color: white;
   display: flex;
-  gap: 40px;
-  margin-left: 40%;
-  margin-top: 10%;
-  padding: 20px;
-  width: 800px;
+  flex-direction: column;
+  padding: 15px;
+  width: auto;
 }
 
-.profile img {
-  height: 500px;
+.profile-box img {
+  height: 350px;
   object-fit: cover;
-  width: 500px;
-  z-index: 1;
+  width: 350px;
 }
 
-.profile div button {
+.profile-box a {
+  align-self: flex-end;
   background-color: rgb(0, 134, 52);
   border-radius: 30px;
   border: none;
   color:  white;
   cursor: pointer;
   font-weight: 700;
-  height: 30px;
-  margin-left: 170px;
-  margin-top: 290px;
-  padding: 0 20px;
-  width: 100px;
+  padding: 10px;
 }
 
-.profile div button:hover {
+.profile-box a:hover {
   opacity: 0.8;
-}
-
-.profile-span {
-  font-weight: 700;
-  color: white;
-  margin-right: 10px;
 }
 
 .profile-edit {
