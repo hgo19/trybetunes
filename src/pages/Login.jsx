@@ -48,31 +48,32 @@ export default class Login extends Component {
     }
     return (
       <div data-testid="page-login" className="login-container">
-        <h1>
-          <span>Trybe</span>
-          {' '}
-          Tunes
-        </h1>
-        <h4>
-          Welcome, enter your name and enjoy
-        </h4>
-        <form className="login-form">
-          <input
-            data-testid="login-name-input"
-            type="text"
-            name="name"
-            onChange={ (e) => this.handleLogin(e) }
-          />
-          <button
-            data-testid="login-submit-button"
-            type="button"
-            disabled={ disableLogin }
-            onClick={ this.handleClick }
-          >
-            Entrar
+        <div className="login-box">
+          <h1>
+            <span>Trybe</span>
+            {' '}
+            Tunes
+          </h1>
+          <h4>
+            Welcome, enter your name and enjoy
+          </h4>
+          <form className="login-form" onSubmit={ this.handleClick }>
+            <input
+              data-testid="login-name-input"
+              type="text"
+              name="name"
+              onChange={ (e) => this.handleLogin(e) }
+            />
+            <button
+              data-testid="login-submit-button"
+              type="submit"
+              disabled={ disableLogin }
+            >
+              Entrar
 
-          </button>
-        </form>
+            </button>
+          </form>
+        </div>
       </div>
     );
   }

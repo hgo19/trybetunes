@@ -41,22 +41,27 @@ span {
 }
 
 .login-container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.login-box {
   align-items: center;
-  background-color: rgb(5, 5, 5);
+  background-color: rgb(15, 15, 15);
   box-shadow: 10px 10px 5px black;
   color: white;
   display: flex;
   flex-direction: column;
   height: 300px;
-  justify-content: center;
-  margin: 20% auto;
   width: 500px;
 }
-.login-container h1 {
+
+.login-box h1 {
   font-size: 50px;
 }
 
-.login-container span{
+.login-box span{
   color: rgb(0, 134, 52);
 }
 
@@ -117,7 +122,7 @@ h1 span {
 
 .sidebar-container {
   align-items: center;
-  background-color: rgb(5, 5, 5);
+  background-color: rgb(15, 15, 15);
   box-shadow: 5px 5px 5px black;
   color: white;
   display: flex;
@@ -237,7 +242,7 @@ h1 span {
 
 .album {
   display: flex;
-  background-color: rgb(5, 5, 5);
+  background-color: rgb(15, 15, 15);
   box-shadow:  12px 12px 10px black;
   color: white;
   flex-direction: column;
@@ -265,7 +270,7 @@ h1 span {
 
 .album-title {
   display: flex;
-  background-color: rgb(5, 5, 5);
+  background-color: rgb(15, 15, 15);
   box-shadow: 10px 10px 5px black;
   color: white;
   gap: 30px;
@@ -288,7 +293,7 @@ h1 span {
 }
 
 .music {
-  background-color: rgb(5, 5, 5);
+  background-color: rgb(15, 15, 15);
   box-shadow:  12px 12px 10px black;
   margin-bottom: 10px;
   padding: 20px;
@@ -309,7 +314,7 @@ h1 span {
 }
 
 .profile {
-  background-color: rgb(5, 5, 5);
+  background-color: rgb(15, 15, 15);
   box-shadow:  12px 12px 10px black;
   color: white;
   display: flex;
@@ -352,7 +357,7 @@ h1 span {
 }
 
 .profile-edit {
-  background-color: rgb(5, 5, 5);
+  background-color: rgb(15, 15, 15);
   box-shadow:  12px 12px 10px black;
   color: white;
   display: flex;
